@@ -2,6 +2,8 @@
 
 A Vue component that shows data table which can be printed. It is a wrapper of `vue2-datatable-component` (https://github.com/OneWayTech/vue2-datatable) module.
 
+npm package url: https://www.npmjs.com/package/printable-data-table
+
 This isn't particularly useful, it's used as a demo for how to publish Vue components to NPM!
 
 ## Publish to npm
