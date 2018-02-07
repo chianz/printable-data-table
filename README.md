@@ -1,37 +1,67 @@
-# vue-clock-simple
+# printable-data-table
 
-A Vue component that shows a clock.
+A Vue component that shows data table which can be printed. It is a wrapper of `vue2-datatable-component` (https://github.com/OneWayTech/vue2-datatable) module.
 
 This isn't particularly useful, it's used as a demo for how to publish Vue components to NPM!
+
+## Publish to npm
+```js
+npm publish
+```
+
+## Dependencies
+
+`bootstrap`
 
 ## Installation
 
 ```js
-npm i --save-dev vue-clock-simple
-```
-
-### Browser
-
-Include the script file, then install the component with `Vue.use(VueClock);` e.g.:
-
-```html
-<script type="text/javascript" src="node_modules/vuejs/dist/vue.min.js"></script>
-<script type="text/javascript" src="node_modules/vue-clock-simple/dist/vue-clock.min.js"></script>
-<script type="text/javascript">
-  Vue.use(VueClock);
-</script>
+npm i --save-dev printable-data-table
 ```
 
 ### Module
 
 ```js
-import VueClock from 'vue-clock';
+import Vue from 'vue'
+import PrintableDataTable from 'printable-data-table'
+
+Vue.component('printable-data-table', PrintableDaTable)
 ```
 
 ## Usage
 
-Once installed, it can be used in a template as simply as:
+Once installed, it can be used in a template as:
 
 ```html
-<vue-clock></vue-clock>
+<printable-data-table v-bind="$data"></printable-data-table>
 ```
+
+where you define data as below:
+
+```js
+export default {
+  name: 'ProductTable',
+  data () {
+    return {
+      tblClass: 'table-bordered',
+      pageSizeOptions: [5, 10, 15, 20, 25],
+      selection: [],
+      columns: [
+        { title: 'Name', field: 'name', sortable: true },
+        { title: 'Price per kg ($)', field: 'price', sortable: true },
+        { title: 'Description', field: 'desc', sortable: true }
+      ],
+      data: [
+        { name: 'Orange', price: 4.80, desc: 'Chinese Orange' },
+        { name: 'Apple', price: 5.50, desc: 'American Apple' },
+        { name: 'Pear', price: 4.50, desc: 'Malaysian Pear' },
+        { name: 'Dragonfruit', price: 2.80, desc: 'Vietnamese Red Dragonfruit' },
+        { name: 'Watermelon', price: 5.70, desc: 'Taiwanese Watermelon' },
+        { name: 'Grape', price: 7.20, desc: 'Chilean Grapes' }
+      ],
+      total: 6,
+      query: { 'limit': 10, 'offset': 0, 'sort': '', 'order': '' },
+    }
+  }
+  ```
+

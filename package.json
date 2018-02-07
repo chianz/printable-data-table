@@ -1,19 +1,20 @@
 {
-  "name": "vue-clock-simple",
-  "version": "1.0.4",
-  "description": "A Vue.js component that displays a clock",
-  "main": "dist/vue-clock.js",
-  "scripts": {
-    "build": "rimraf ./dist && webpack --config ./webpack.config.js"
-  },
-  "author": "Anthony Gore",
+  "name": "printable-data-table",
+  "version": "1.0.6",
+  "description": "A Vue.js component that show a data grid with print option",
+  "main": "src/PrintableDataTable.vue",
+  "scripts": {},
+  "author": "Tony Vu",
   "license": "MIT",
   "dependencies": {
-    "moment": "^2.18.1"
+    "css-loader": "^0.28.9",
+    "lodash": "^4.17.5",
+    "print-html-element": "^0.5.1",
+    "vue2-datatable-component": "^2.2.2"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anthonygore/vue-clock-simple"
+    "url": "git+https://github.com/tonyvu2014/vue-data-table.git"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
